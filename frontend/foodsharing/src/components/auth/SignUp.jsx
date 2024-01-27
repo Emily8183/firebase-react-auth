@@ -1,4 +1,4 @@
-import {createUserWithEmailAndPassword} from "firebase/auth";
+import {createUserWithEmailAndPassword, signOut} from "firebase/auth";
 import React,{useState} from 'react';
 import {auth} from "../../firebase";
 
