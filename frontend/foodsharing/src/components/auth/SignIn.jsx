@@ -7,7 +7,7 @@ const SignIn = () => {
     const [password,setPassword] = useState('');
 
     const signIn = (e) => {
-       e.preventDefult();
+       e.preventDefault();
        //prevent the form submission from happening until all inputs have valid values
        signInWithEmailAndPassword(auth,email,password)
        .then((userCredential) => {
@@ -21,7 +21,7 @@ const SignIn = () => {
     return (
         <div className="sign-in-form">
             <form onSubmit ={signIn}>
-                <h1>Sign In</h1>
+                <h1>Log in to your account</h1>
                 <input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
                 <input type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <button type="submit">Log In</button>

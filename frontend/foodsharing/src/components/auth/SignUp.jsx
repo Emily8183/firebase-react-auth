@@ -7,11 +7,13 @@ const SignUp = () => {
     const [password,setPassword] = useState('');
 
     const signUp = (e) => {
-       e.preventDefult();
+       e.preventDefault();
        //prevent the form submission from happening until all inputs have valid values
        createUserWithEmailAndPassword(auth,email,password)
        .then((userCredential) => {
         console.log(userCredential);
+        // const user=userCredential.user;
+        // console.log(user);
        })
         .catch((error) => {
             console.log(error);
@@ -21,7 +23,7 @@ const SignUp = () => {
     return (
         <div className="sign-up-form">
             <form onSubmit ={signUp}>
-                <h1>Sign Up</h1>
+                <h1>Create an Account</h1>
                 <input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
                 <input type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <button type="submit">Sign Up</button>
